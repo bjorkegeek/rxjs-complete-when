@@ -1,4 +1,4 @@
-import { Observable, MonoTypeOperatorFunction, from } from "rxjs";
+import { Observable, MonoTypeOperatorFunction, EMPTY } from "rxjs";
 import { catchError, endWith, ignoreElements, takeUntil } from "rxjs/operators";
 
 /**
@@ -14,7 +14,7 @@ export function completeWhen<T>(
       takeUntil(
         controller.pipe(
           ignoreElements(),
-          catchError(() => from([])),
+          catchError(() => EMPTY),
           endWith(true)
         )
       )
