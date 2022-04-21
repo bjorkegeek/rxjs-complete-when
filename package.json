@@ -1,15 +1,17 @@
 {
   "name": "rxjs-complete-when",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An RxJS Operator to follow the completion of another observable",
   "homepage": "https://github.com/bjorkegeek/rxjs-complete-when",
-  "main": "lib/complete-when.js",
-  "types": "lib/complete-when.d.ts",
+  "main": "dist/complete-when.cjs.js",
+  "module": "dist/complete-when.esm.js",
+  "browser": "dist/complete-when.umd.js",
+  "types": "dist/complete-when.d.ts",
   "scripts": {
     "test": "jest --coverage",
     "lint": "eslint . --ext .ts",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "rollup -c",
+    "format": "prettier --write \"src/**/*.ts\" rollup.config.js",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -20,21 +22,27 @@
   "author": "David Björkevik",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "eslint": "^8.13.0",
     "jest": "^27.4.1",
     "prettier": "^2.6.2",
+    "rollup": "^2.70.2",
     "rxjs": "=6.3.0",
     "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "tslib": "^2.3.1",
     "typescript": "^4.6.3"
   },
   "peerDependencies": {
     "rxjs": ">=6.3.0"
   },
   "files": [
-    "lib/**",
+    "dist/**",
     "src/**/*.ts"
   ],
   "keywords": [
