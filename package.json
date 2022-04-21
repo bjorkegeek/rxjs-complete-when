@@ -1,6 +1,6 @@
 {
   "name": "rxjs-complete-when",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An RxJS Operator to follow the completion of another observable",
   "homepage": "https://github.com/bjorkegeek/rxjs-complete-when",
   "main": "lib/complete-when.js",
@@ -20,18 +20,18 @@
   "author": "David Björkevik",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^26.0.14",
-    "@typescript-eslint/eslint-plugin": "^4.1.1",
-    "@typescript-eslint/parser": "^4.1.1",
-    "eslint": "^7.9.0",
-    "jest": "^26.4.2",
-    "prettier": "^2.1.2",
-    "rxjs": "^6.0.0",
-    "ts-jest": "^26.4.0",
-    "typescript": "^4.0.3"
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.13.0",
+    "jest": "^27.4.1",
+    "prettier": "^2.6.2",
+    "rxjs": "=6.3.0",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3"
   },
   "peerDependencies": {
-    "rxjs": ">=6.0.0"
+    "rxjs": ">=6.3.0"
   },
   "files": [
     "lib/**",
