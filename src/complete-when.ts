@@ -7,7 +7,7 @@ import { catchError, endWith, ignoreElements, takeUntil } from "rxjs/operators";
  * @param controller The controller observable
  */
 export function completeWhen<T>(
-  controller: Observable<unknown>
+  controller: Observable<unknown>,
 ): MonoTypeOperatorFunction<T> {
   return (observable: Observable<T>) => {
     return observable.pipe(
@@ -15,9 +15,9 @@ export function completeWhen<T>(
         controller.pipe(
           ignoreElements(),
           catchError(() => EMPTY),
-          endWith(true)
-        )
-      )
+          endWith(true),
+        ),
+      ),
     );
   };
 }
